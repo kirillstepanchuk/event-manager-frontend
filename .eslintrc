@@ -1,0 +1,53 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"jest": true
+	},
+  "root": true,
+	"parser": "@typescript-eslint/parser",
+	"extends": [
+		"airbnb",
+		"airbnb-typescript"
+	],
+	"parserOptions": {
+		"presets": ["@babel/preset-react"],
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"project": "**/tsconfig.json"
+	},
+	"plugins": ["react", "typescript"],
+	"rules": {
+		"react/function-component-definition": 0,
+		"react/jsx-props-no-spreading": 0,
+		"@typescript-eslint/default-param-last": 1
+	},
+	"overrides": [
+    {
+      "files": ["./**/webpack.**.js"],
+      "rules": {
+        "import/no-extraneous-dependencies": 0,
+        "@typescript-eslint/no-var-requires": 0,
+        "@typescript-eslint/explicit-function-return-type": 0
+      }
+    },
+    {
+      "files": [".eslintrc"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": 0,
+        "@typescript-eslint/explicit-function-return-type": 0
+      }
+    }
+  ],
+	"settings": {
+		"react": {
+			"version": "detect"
+		},
+		"import/resolver": {
+			"node": {
+				"extensions": [".js", ".jsx", ".ts", ".tsx"]
+			}
+		}
+	}
+}
